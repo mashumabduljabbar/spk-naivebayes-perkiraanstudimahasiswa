@@ -34,9 +34,9 @@
                                     </thead>
                                     <tbody>
 									<?php 
-									$query = mysql_query("SELECT * FROM pertanyaan order by id_basis ASC");
+									$query = mysqli_query($con, "SELECT * FROM pertanyaan order by id_basis ASC");
 									$no = 1;
-									while ($data = mysql_fetch_array($query)){
+									while ($data = mysqli_fetch_array($query)){
 									?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no;?></td>

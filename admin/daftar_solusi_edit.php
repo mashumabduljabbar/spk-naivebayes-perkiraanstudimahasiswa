@@ -16,7 +16,7 @@
                             ID : 
 							<?php
 							$id_daftarsolusi = $_GET['id'];
-							$query_data = mysql_fetch_array(mysql_query("select * from daftar_solusi where id_daftarsolusi='$id_daftarsolusi'"));
+							$query_data = mysqli_fetch_array(mysqli_query($con, "select * from daftar_solusi where id_daftarsolusi='$id_daftarsolusi'"));
 							$id_solusi = $query_data['id_solusi'];
 							echo $id_solusi;?>
 							</td>

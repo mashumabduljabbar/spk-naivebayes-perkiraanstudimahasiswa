@@ -25,8 +25,8 @@
 		}
 		
 		$ssql = "SELECT * FROM daftar_user WHERE $param = '$comp'";
-		$query = mysql_query ($ssql);
-		$result = mysql_num_rows($query);
+		$query = mysqli_query($con, $ssql);
+		$result = mysqli_num_rows($query);
 	
 		if ($result > 0){
 			$valid += 1;
@@ -39,7 +39,7 @@
 	else {
 		$defdate = date ('Y-m-d');
 		$ssql = "INSERT INTO daftar_user (nama_lengkap, nama_perti, nama_jurusan, tahun_masuk, nama, password, jenis_kelamin, tgl_lahir, tgl_diagnosa, keterangan) VALUES ('$nama_lengkap', '$nama_perti', '$nama_jurusan', '$tahun_masuk', '$user', '$pass', '$gender', '$lahir','$defdate','-')";
-		$query = mysql_query($ssql);
+		$query = mysqli_query($con, $ssql);
 		header ('location:daftar.php?berhasil=1');
 		
 	}

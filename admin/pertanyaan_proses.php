@@ -4,7 +4,7 @@ $updater = $_SESSION['username'];
 	include "fungsi_koneksi.php";
 	switch($_GET['act']){
 		case 'add':
-			mysql_query("INSERT INTO pertanyaan SET 
+			mysqli_query($con, "INSERT INTO pertanyaan SET 
 			id_gejala			= '$_POST[id_gejala]',
 			pertanyaan			= '$_POST[pertanyaan]',
 			fakta_ya			= '$_POST[fakta_ya]',
@@ -15,7 +15,7 @@ $updater = $_SESSION['username'];
 		break;
 		case 'edit':
 			$id_basis = $_POST['id_basis'];
-			mysql_query("UPDATE pertanyaan SET 
+			mysqli_query($con, "UPDATE pertanyaan SET 
 			id_gejala			= '$_POST[id_gejala]',
 			pertanyaan			= '$_POST[pertanyaan]',
 			fakta_ya			= '$_POST[fakta_ya]',
@@ -26,7 +26,7 @@ $updater = $_SESSION['username'];
 			echo "<meta http-equiv='refresh' content='0;url=?bayes=pertanyaan'>";			
 		break;
 		case 'delete':
-			mysql_query("DELETE FROM pertanyaan WHERE id_basis = '$_GET[id]'");
+			mysqli_query($con, "DELETE FROM pertanyaan WHERE id_basis = '$_GET[id]'");
 			echo "<meta http-equiv='refresh' content='0;url=?bayes=pertanyaan'>";
 		break;
 	}

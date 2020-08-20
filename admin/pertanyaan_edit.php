@@ -16,7 +16,7 @@
                             ID : 
 							<?php
 							$id_basis = $_GET['id'];
-							$query_data = mysql_fetch_array(mysql_query("select * from pertanyaan where id_basis='$id_basis'"));
+							$query_data = mysqli_fetch_array(mysqli_query($con, "select * from pertanyaan where id_basis='$id_basis'"));
 							$id_gejala = $query_data['id_gejala'];
 							echo $id_gejala;?>
 							</td>

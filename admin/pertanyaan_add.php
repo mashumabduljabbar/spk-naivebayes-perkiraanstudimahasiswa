@@ -16,7 +16,7 @@
                             ID : 
 							<?php
 							$id_basis = $_GET['id'];
-							$query_data = mysql_fetch_array(mysql_query("select SUBSTR(id_gejala,2)  as id from pertanyaan order by id_basis DESC limit 1"));
+							$query_data = mysqli_fetch_array(mysqli_query($con, "select SUBSTR(id_gejala,2)  as id from pertanyaan order by id_basis DESC limit 1"));
 							$id_gejala = $query_data['id']+1;
 							echo $id_gejala;?>
 							</td>

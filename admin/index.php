@@ -69,12 +69,12 @@
 include('fungsi_koneksi.php');
 include "fungsi_enc_dec.php";
 session_start();
-$username = mysql_real_escape_string($_POST['username']);
-$password = mysql_real_escape_string(md5($_POST['password']));
+$username = mysqli_real_escape_string($_POST['username']);
+$password = mysqli_real_escape_string(md5($_POST['password']));
 
-$query_userportal = mysql_query("select * from tbl_admin where username='$username' and password='$password' and status='1'");
-if(mysql_num_rows($query_userportal)==1){ //jika berhasil akan bernilai 1
-	$data_userportal = mysql_fetch_array($query_userportal);
+$query_userportal = mysqli_query($con, "select * from tbl_admin where username='$username' and password='$password' and status='1'");
+if(mysqli_num_rows($query_userportal)==1){ //jika berhasil akan bernilai 1
+	$data_userportal = mysqli_fetch_array($query_userportal);
 	$_SESSION['username'] = $data_userportal['username'];
 	$_SESSION['password'] = $data_userportal['password'];
 }

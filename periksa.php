@@ -76,8 +76,8 @@
 					</tr>
 					<?php 
 					$no = 0;
-					$query_pertanyaan = mysql_query("select * from pertanyaan");
-					while($data_pertanyaan = mysql_fetch_array($query_pertanyaan)){
+					$query_pertanyaan = mysqli_query($con, "select * from pertanyaan");
+					while($data_pertanyaan = mysqli_fetch_array($query_pertanyaan)){
 					?>
 					<tr>
 						<td><?php echo $no+1;?></td>
@@ -105,9 +105,9 @@
 				<tbody>
 					<?php
 						$ssql = "SELECT * FROM daftar_user WHERE id_user = '".$_SESSION['user']."'";
-						$query = mysql_query($ssql);
+						$query = mysqli_query($con, $ssql);
 						
-						while ($record = mysql_fetch_array($query)){
+						while ($record = mysqli_fetch_array($query)){
 							
 							$lahir = substr($record['tgl_lahir'], 0, 4);
 							$now = date ('Y');
@@ -191,8 +191,8 @@
 					</tr>
 					<?php 
 					$nomor = 0;
-					$query_pertanyaan = mysql_query("select * from pertanyaan");
-					while($data_pertanyaan = mysql_fetch_array($query_pertanyaan)){
+					$query_pertanyaan = mysqli_query($con, "select * from pertanyaan");
+					while($data_pertanyaan = mysqli_fetch_array($query_pertanyaan)){
 					$jawab = explode(",",$_POST['quisioner'.$nomor]);
 					?>
 					<tr>
@@ -213,8 +213,8 @@
 					</tr>
 					<?php 
 					$nomor = 1;
-					$query_daftar_solusi = mysql_query("select * from daftar_solusi where waktu_kelulusan='$waktululus'");
-					while($data_daftar_solusi = mysql_fetch_array($query_daftar_solusi)){
+					$query_daftar_solusi = mysqli_query($con, "select * from daftar_solusi where waktu_kelulusan='$waktululus'");
+					while($data_daftar_solusi = mysqli_fetch_array($query_daftar_solusi)){
 					?>
 					<tr>
 						<td><?php echo $nomor;?></td>
@@ -233,9 +233,9 @@
 			<table class="table table" style="color:white;">
 			<?php
 			$ssql = "SELECT * FROM daftar_user WHERE id_user = '".$_SESSION['user']."'";
-						$query = mysql_query($ssql);
+						$query = mysqli_query($con, $ssql);
 						
-						while ($record = mysql_fetch_array($query)){
+						while ($record = mysqli_fetch_array($query)){
 							
 							$lahir = substr($record['tgl_lahir'], 0, 4);
 							$now = date ('Y');

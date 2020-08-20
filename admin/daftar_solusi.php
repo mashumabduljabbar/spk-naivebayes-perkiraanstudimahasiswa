@@ -32,9 +32,9 @@
                                     </thead>
                                     <tbody>
 									<?php 
-									$query = mysql_query("SELECT * FROM daftar_solusi");
+									$query = mysqli_query($con, "SELECT * FROM daftar_solusi");
 									$no = 1;
-									while ($data = mysql_fetch_array($query)){
+									while ($data = mysqli_fetch_array($query)){
 									?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $no;?></td>

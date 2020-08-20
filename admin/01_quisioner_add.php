@@ -15,7 +15,7 @@
 							<td width="50%" align="right" >
                             ID : 
 							<?php
-							$query_data = mysql_fetch_array(mysql_query("select id_quisioner from 01_quisioner order by id_quisioner DESC limit 1"));
+							$query_data = mysqli_fetch_array(mysqli_query($con, "select id_quisioner from 01_quisioner order by id_quisioner DESC limit 1"));
 							$id_quisioner = $query_data['id_quisioner']+1;
 							echo $id_quisioner;?>
 							</td>

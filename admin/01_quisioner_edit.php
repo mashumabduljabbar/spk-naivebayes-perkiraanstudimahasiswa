@@ -16,7 +16,7 @@
                             ID : 
 							<?php
 							$id_quisioner = $_GET['id'];
-							$query_data = mysql_fetch_array(mysql_query("select * from 01_quisioner where id_quisioner = '$id_quisioner'"));
+							$query_data = mysqli_fetch_array(mysqli_query($con, "select * from 01_quisioner where id_quisioner = '$id_quisioner'"));
 							echo $id_quisioner;?>
 							</td>
 						</tr>

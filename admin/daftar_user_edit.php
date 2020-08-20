@@ -16,7 +16,7 @@
                             ID : 
 							<?php
 							$id_user = $_GET['id'];
-							$query_data = mysql_fetch_array(mysql_query("select * from daftar_user where id_user='$id_user'"));
+							$query_data = mysqli_fetch_array(mysqli_query($con, "select * from daftar_user where id_user='$id_user'"));
 							$id_user = $query_data['id_user'];
 							echo $id_user;?>
 							</td>

@@ -28,7 +28,7 @@
 	</td>
 </tr>
 <?php
-	$jumlah_kelulusan = mysql_fetch_array(mysql_query("select 
+	$jumlah_kelulusan = mysqli_fetch_array(mysqli_query($con, "select 
 count(CASE
     WHEN lulus_quisioner='TEPAT' THEN lulus_quisioner
 END) as tepat,
@@ -86,10 +86,10 @@ from `01_quisioner`"));
 </tr>
 <?php
 $no = 0;
-$query_basis = mysql_query("select * from pertanyaan");
-while($data_basis=mysql_fetch_array($query_basis)){
+$query_basis = mysqli_query($con, "select * from pertanyaan");
+while($data_basis=mysqli_fetch_array($query_basis)){
 	
-$quisioner = mysql_fetch_array(mysql_query("select 
+$quisioner = mysqli_fetch_array(mysqli_query($con, "select 
 ROUND(count(CASE
     WHEN `quisioner[$no]`='YA' and lulus_quisioner='TEPAT' THEN `quisioner[$no]`
 END)/count(CASE
